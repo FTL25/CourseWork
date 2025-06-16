@@ -14,7 +14,7 @@ namespace CourseWork
 {
     public partial class MainForm : Form
     {
-        NeuralNetwork NN = new NeuralNetwork(2025, 35, 17, 0.07);
+        NeuralNetwork NN = new NeuralNetwork(2025, 38, 17, 0.07);
         List<List<PictureBox>> pictureBoxes;
         List<List<Bitmap>> Bitmaps;
         List<List<PictureBox>> RootPictures;
@@ -714,7 +714,7 @@ namespace CourseWork
 
                 }
 
-                if (i % 1 == 0)
+                if (i % 20 == 0)
                 {
                     Check(out R, out N, out data, TestPath);
 
