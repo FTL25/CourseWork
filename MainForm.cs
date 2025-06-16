@@ -14,7 +14,7 @@ namespace CourseWork
 {
     public partial class MainForm : Form
     {
-        NeuralNetwork NN = new NeuralNetwork(2025, 50, 17, 0.09);
+        NeuralNetwork NN = new NeuralNetwork(2025, 35, 17, 0.07);
         List<List<PictureBox>> pictureBoxes;
         List<List<Bitmap>> Bitmaps;
         List<List<PictureBox>> RootPictures;
@@ -647,8 +647,6 @@ namespace CourseWork
             i = 0;
             int R = 0, N = 1;
             int[] data;
-            bool first = true;
-            double NewRate = 0.09;
 
             //int batch_size = 5;
             //int batch_count = photos.Length / batch_size;
@@ -664,16 +662,6 @@ namespace CourseWork
                 if ((double)R / (double)N > 0.9)
                 {
                     return;
-                }
-                if ((double)R / (double)N > 0.9 && first)
-                {
-                    first = false;
-                    FileStream path = new FileStream("Журнал.txt", FileMode.Append);
-                    using (StreamWriter writer = new StreamWriter(path))
-                    {
-                        writer.WriteLine($"Новая скорость обучения: {NewRate}");
-                    }
-                    NN.LearningRate(NewRate);
                 }
                 Random.Shared.Shuffle(photos);
                 for (int j = 0; j < photos.Length; j++)
@@ -726,7 +714,7 @@ namespace CourseWork
 
                 }
 
-                if (i % 10 == 0)
+                if (i % 1 == 0)
                 {
                     Check(out R, out N, out data, TestPath);
 
