@@ -14,7 +14,7 @@ namespace CourseWork
 {
     public partial class MainForm : Form
     {
-        NeuralNetwork NN = new NeuralNetwork(2025, 40, 17, 0.06);
+        NeuralNetwork NN = new NeuralNetwork(2025, 40, 17, 0.07);
         List<List<PictureBox>> pictureBoxes;
         List<List<Bitmap>> Bitmaps;
         List<List<PictureBox>> RootPictures;
