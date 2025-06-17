@@ -14,7 +14,7 @@ namespace CourseWork
 {
     public partial class MainForm : Form
     {
-        NeuralNetwork NN = new NeuralNetwork(2025, 38, 17, 0.07);
+        NeuralNetwork NN = new NeuralNetwork(2025, 40, 17, 0.06);
         List<List<PictureBox>> pictureBoxes;
         List<List<Bitmap>> Bitmaps;
         List<List<PictureBox>> RootPictures;
@@ -708,13 +708,13 @@ namespace CourseWork
                     //    NN.GradientDescent(dError);
 
                     //    dErrors = Matrix.Transpose(dErrors);
-                    //}
+                    //}0
                     //else
                     //    b++;
 
                 }
 
-                if (i % 20 == 0)
+                if (i % 10 == 0)
                 {
                     Check(out R, out N, out data, TestPath);
 
